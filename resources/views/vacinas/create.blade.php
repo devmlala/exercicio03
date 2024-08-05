@@ -4,8 +4,8 @@
     <div class="container">
         <h1>Cadastro de Vacinas</h1>
 
-        <form action="{{ route('vacinas.store') }}" method="post"> 
-            @csrf 
+        <form action="{{ route('vacinas.store') }}" method="post">
+            @csrf
             <div class="form-group">
                 <label for="location">Localização:</label>
                 <input type="text" class="form-control" id="location" name="location" value="{{ old('location', 'Localização padrão') }}">
@@ -25,7 +25,7 @@
                 <label for="source_url">URL da fonte:</label>
                 <input type="url" class="form-control" id="source_url" name="source_url" value="{{ old('source_url', 'http://exemplo.com') }}">
             </div>
-            
+
             <div class="form-group">
                 <label for="total_vaccinations">Total de vacinações:</label>
                 <input type="number" class="form-control" id="total_vaccinations" name="total_vaccinations" value="{{ old('total_vaccinations', 0) }}">

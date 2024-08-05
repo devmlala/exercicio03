@@ -34,7 +34,7 @@ class VacinaController extends Controller
         // Definir valores padrão
         $defaultValues = [
             'location' => 'Localização padrão',
-            'date' => '01/01/1970',
+            'date' => '01-01-1970',
             'vaccine' => 'Vacina padrão',
             'source_url' => 'http://exemplo.com',
             'total_vaccinations' => 0,
@@ -48,6 +48,7 @@ class VacinaController extends Controller
 
     // Armazenar uma nova vacina no banco de dados
     public function store(VacinaRequest $request){
+        //dd('cheguei');
         $vacina = new Vacina;
 
         $vacina->location = $request->location;
