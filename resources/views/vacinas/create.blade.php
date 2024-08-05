@@ -1,61 +1,52 @@
 @extends('laravel-usp-theme::master')
 
 @section('content')
-  Cadastro de Vacinas
+    <div class="container">
+        <h1>Cadastro de Vacinas</h1>
 
-  <form action="{{ route('vacinas.store')}}" method="post"> 
-    @csrf 
-    <div class="form-group">
-        Localização: <input class="form-control" name="location" value="{{ old('location') }}">
-    </div>
+        <form action="{{ route('vacinas.store') }}" method="post"> 
+            @csrf 
+            <div class="form-group">
+                <label for="location">Localização:</label>
+                <input type="text" class="form-control" id="location" name="location" value="{{ old('location', 'Localização padrão') }}">
+            </div>
 
-    <div class="form-group">
-        Data: <input class="form-control" name="date" value="{{ old('date') }}">
-    </div>
+            <div class="form-group">
+                <label for="date">Data (dd/mm/yyyy):</label>
+                <input type="text" class="form-control" id="date" name="date" value="{{ old('date', '01/01/1970') }}" placeholder="dd/mm/yyyy">
+            </div>
 
-    <div class="form-group">
-        Vacina: <input class="form-control" name="vaccine" value="{{ old('vaccine') }}">
-    </div>
+            <div class="form-group">
+                <label for="vaccine">Vacina:</label>
+                <input type="text" class="form-control" id="vaccine" name="vaccine" value="{{ old('vaccine', 'Vacina padrão') }}">
+            </div>
 
-    <div class="form-group">
-        URL da fonte: <input class="form-control" name="source_url" value="{{ old('source_url') }}">
-    </div>
-    
-    <div class="form-group">
-        Total de vacinações: <input class="form-control" name="total_vaccinations" value="{{ old('total_vaccinations') }}">
-    </div>
+            <div class="form-group">
+                <label for="source_url">URL da fonte:</label>
+                <input type="url" class="form-control" id="source_url" name="source_url" value="{{ old('source_url', 'http://exemplo.com') }}">
+            </div>
+            
+            <div class="form-group">
+                <label for="total_vaccinations">Total de vacinações:</label>
+                <input type="number" class="form-control" id="total_vaccinations" name="total_vaccinations" value="{{ old('total_vaccinations', 0) }}">
+            </div>
 
-    <div class="form-group">
-        Pessoas vacinadas: <input class="form-control" name="people_vaccinated" value="{{ old('people_vaccinated') }}">
-    </div>
+            <div class="form-group">
+                <label for="people_vaccinated">Pessoas vacinadas:</label>
+                <input type="number" class="form-control" id="people_vaccinated" name="people_vaccinated" value="{{ old('people_vaccinated', 0) }}">
+            </div>
 
-    <div class="form-group">
-        Pessoas completamente vacinadas: <input class="form-control" name="people_fully_vaccinated" value="{{ old('people_fully_vaccinated') }}">
-    </div>
+            <div class="form-group">
+                <label for="people_fully_vaccinated">Pessoas completamente vacinadas:</label>
+                <input type="number" class="form-control" id="people_fully_vaccinated" name="people_fully_vaccinated" value="{{ old('people_fully_vaccinated', 0) }}">
+            </div>
 
-    <div class="form-group">
-        Total de reforços: <input class="form-control" name="total_boosters" value="{{ old('total_boosters') }}">
-    </div>
+            <div class="form-group">
+                <label for="total_boosters">Total de reforços:</label>
+                <input type="number" class="form-control" id="total_boosters" name="total_boosters" value="{{ old('total_boosters', 0) }}">
+            </div>
 
-    <div>
-        <button type="submit" class="btn btn-success">Enviar</button>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
     </div>
-  </form>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById('location').value = '1234567890';
-            document.getElementById('date').value = '1234567890';
-            document.getElementById('vaccine').value = '1234567890';
-            document.getElementById('source_url').value = '1234567890';
-            document.getElementById('total_vaccinations').value = '1234567890';
-            document.getElementById('people_vaccinated').value = '9781234567890';
-            document.getElementById('people_fully_vaccinated').value = 'John Doe';
-            document.getElementById('total_boosters').value = '1234567890';
-        });
-    </script>
-</body>
 @endsection
-
-   

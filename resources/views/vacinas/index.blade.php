@@ -21,6 +21,7 @@
 
 </div>
 
+
 <!-- Tabela de vacinas -->
 <table class="table table-striped">
   <thead>

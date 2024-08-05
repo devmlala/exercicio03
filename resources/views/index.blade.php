@@ -9,7 +9,6 @@
     <button type="submit">Buscar</button>
   </form>
 </br>
-  <!--<a href="{{ route('vacinas.criar') }}" class="btn btn-primary">Adicionar</a>-->
 
 @endsection
 
