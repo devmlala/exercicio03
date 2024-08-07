@@ -15,7 +15,7 @@
         <form action="{{ route('vacinas.destroyAll') }}" method="POST" style="display:inline;">
           @csrf
           @method('DELETE')
-          <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir todos os registros?')">Deletar Todos</button>
+          <button type="submit" class="btn btn-danger">Deletar Todos</button>
         </form>
     </div>
 

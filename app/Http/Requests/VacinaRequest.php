@@ -27,11 +27,6 @@ class VacinaRequest extends FormRequest
         return $rules;
     }
 
- /*Faça um mutator para mostrar o campo date com o formato brasileiro dd/mm/yyyy 
-    e outro mutator para salvá-lo commo yyyy-mm-dd (lembre-se que o formulário deve receber dd/mm/yyyy)
-    Implemente o FormRequest garantindo que seja digitado dd/mm/yyyy, além implementar as outras validações
-*/
-
     public function prepareForValidation(){
         $this->merge([
             'date' => str_replace('/','-',$this->date),

@@ -114,13 +114,11 @@ class VacinaController extends Controller
     }
 
     // Deletar todos os registros
-    public function destroyAll(Request $request)
+    public function destroyAll(VacinaRequest $request)
     {
-        if ($request->isMethod('post') && $request->method() === 'DELETE') {
-            Vacina::query()->delete();
+        dd('chegou no destroyall');
+            Vacina::truncate();
             return redirect()->route('vacinas.index')->with('success', 'Todos os registros foram excluídos.');
-        }
-        return redirect()->route('vacinas.index')->withErrors('Método inválido para a operação.');
     }
 
     // Mostrar o formulário para importar CSV

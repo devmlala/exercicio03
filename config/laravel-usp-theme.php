@@ -23,15 +23,14 @@ $admin = [
     ],
 ];
 
-$submenu2 = [
+$vacinas = [
     [
-        'text' => 'SubItem 1',
-        'url' => 'subitem1',
+        'text' => 'Listar',
+        'url' => '/vacinas',
     ],
     [
-        'text' => 'SubItem 2',
-        'url' => 'subitem2',
-        'can' => 'admin',
+        'text' => 'Criar',
+        'url' => '/vacinas/create',
     ],
 ];
 
@@ -45,8 +44,8 @@ $menu = [
         'key' => 'menu_dinamico',
     ],
     [
-        'text' => 'Drop Down',
-        'submenu' => $submenu2,
+        'text' => 'Vacinas',
+        'submenu' => $vacinas,
         'can' => '',
     ],
     [
