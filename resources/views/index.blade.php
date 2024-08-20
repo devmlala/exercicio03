@@ -1,7 +1,7 @@
  @extends('laravel-usp-theme::master')
 
 @section('content')
-  <h1>Meu Sistema</h1>
+  <h1>Vacinas</h1>
 
   <form action="{{ route('vacinas.index') }}" method="GET">
     @csrf

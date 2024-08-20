@@ -4,6 +4,15 @@
     <div class="container">
         <h1>Cadastro de Vacinas</h1>
 
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+        @endif
         <form action="{{ route('vacinas.store') }}" method="post">
             @csrf
             <div class="form-group">
@@ -11,7 +20,7 @@
                 <input type="text" class="form-control" id="location" name="location" value="{{ old('location', 'Localização padrão') }}">
             </div>
 
-            <div class="form-group">
+            <<div class="form-group">
                 <label for="date">Data (dd/mm/yyyy):</label>
                 <input type="text" class="form-control" id="date" name="date" value="{{ old('date', '01/01/1970') }}" placeholder="dd/mm/yyyy">
             </div>
@@ -49,4 +58,6 @@
             <button type="submit" class="btn btn-success">Enviar</button>
         </form>
     </div>
+   
+
 @endsection

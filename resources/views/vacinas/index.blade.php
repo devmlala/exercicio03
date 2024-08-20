@@ -4,7 +4,8 @@
 
 <!-- Formulário de busca -->
 <div class="d-flex justify-content-between mb-3">
-    <form method="GET" action="{{ route('vacinas.index') }}" class="d-flex align-items-center">
+  
+    <form class="d-flex align-items-center">
         @csrf
         <input name="search" value="{{ request()->search }}" placeholder="Buscar..." class="form-control me-2">
         <button type="submit" class="btn btn-primary">Buscar</button>
@@ -54,7 +55,7 @@
                 <form action="{{ route('vacinas.destroy', $vacina) }}" method="POST" style="display:inline;">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>
+                    <button type="submit" class="btn btn-danger btn-sm" name="Excluir" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>
                 </form>
             </td>
         </tr>

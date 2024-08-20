@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Validator;
 class VacinaController extends Controller
 {
     // Listar todas as vacinas
-    public function index(Request $request)
-    {
+    public function index(Request $request){
         if ($request->search) {
-            $string = '%' . $request->search . '%';
-            $vacinas = Vacina::where('total_vaccinations', 'LIKE', $string)
+            $string = '%'.$request->search.'%';
+            $vacinas = Vacina::where('location', 'LIKE', $string)
                 ->orWhere('people_vaccinated', 'LIKE', $string)
+                ->orWhere('date', 'LIKE', $string)
                 ->get();
         } else {
             $vacinas = Vacina::all();
@@ -66,14 +66,12 @@ class VacinaController extends Controller
     }
 
     // Mostrar o formulário para editar uma vacina existente
-    public function edit(Vacina $vacina)
-    {
+    public function edit(Vacina $vacina){
         return view('vacinas.edit', compact('vacina'));
     }
 
     // Atualizar uma vacina existente no banco de dados
-    public function update(VacinaRequest $request, Vacina $vacina)
-    {
+    public function update(VacinaRequest $request, Vacina $vacina){
         $vacina->location = $request->location;
 
         // Convertendo a data do formato 'dd/mm/yyyy' para 'yyyy-mm-dd'
@@ -101,35 +99,30 @@ class VacinaController extends Controller
     }
 
     // Mostrar os detalhes de uma vacina
-    public function show(Vacina $vacina)
-    {
+    public function show(Vacina $vacina){
         return view('vacinas.show', compact('vacina'));
     }
 
     // Deletar uma vacina existente
-    public function destroy(Vacina $vacina)
-    {
+    public function destroy(Vacina $vacina){
         $vacina->delete();
         return redirect()->route('vacinas.index');
     }
 
     // Deletar todos os registros
-    public function destroyAll(VacinaRequest $request)
-    {
-        dd('chegou no destroyall');
+    public function destroyAll(VacinaRequest $request){
+            dd('chegou no destroyall');
             Vacina::truncate();
             return redirect()->route('vacinas.index')->with('success', 'Todos os registros foram excluídos.');
     }
 
     // Mostrar o formulário para importar CSV
-    public function importarCSVForm()
-    {
+    public function importarCSVForm(){
         return view('vacinas.importarcsv');
     }
 
     // Importar CSV e adicionar dados ao banco de dados
-    public function importarCSV(Request $request)
-    {
+    public function importarCSV(Request $request){
         if (!$request->hasFile('file') || !$request->file('file')->isValid()) {
             return redirect()->back()->withErrors(['error' => 'O arquivo enviado não é válido.']);
         }
