@@ -9,7 +9,8 @@
         "doctrine/dbal": "^4.0",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
-        "uspdev/laravel-usp-theme": "^2.8"
+        "uspdev/laravel-usp-theme": "^2.8",
+        "uspdev/replicado": "^1.22"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

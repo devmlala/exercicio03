@@ -27,3 +27,7 @@ Route::delete('/vacinas/destroyAll', [VacinaController::class, 'destroyAll'])->n
 Route::get('/vacinas/importarCSV', [VacinaController::class, 'importarCSVForm'])->name('vacinas.importarCSVForm');
 Route::post('/vacinas/importarCSV', [VacinaController::class, 'importarCSV'])->name('vacinas.importarCSV');
 
+
+
+Route::get('/trep', [IndexController::class, 'showEmails']);
+
