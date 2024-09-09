@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CienciaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +34,7 @@ Route::get('/ciencias', function () {
 Route::get('/ciencias/climatologia', function () {
     return view('ciencias.climatologia');
 });
+
+
+//ciencias
+Route::get('/ciencias', [CienciaController::class, 'index'])->name('ciencias.index');

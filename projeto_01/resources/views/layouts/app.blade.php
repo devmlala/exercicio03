@@ -18,47 +18,47 @@
             background-color: #e9f5ec; /* Fundo verde suave */
             color: #333; /* Cor principal do texto */
         }
+        .hero-container {
+            position: relative;
+            background-image: url('https://example.com/path/to/your/image.jpg'); /* Substitua pelo caminho da sua imagem */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 0 0 10px 10px;
+            z-index: 1; /* Certifique-se de que o hero container está abaixo do header */
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Sobreposição escura */
+            border-radius: 0 0 10px 10px;
+            z-index: 0; /* Sobreposição abaixo do conteúdo */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1; /* Garante que o conteúdo seja visível acima da sobreposição */
+        }
         header {
             background-color: #2f855a; /* Verde médio */
             color: #ffffff;
             padding: 1.5rem 2rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10; /* Certifica que o header está acima do conteúdo anterior */
+            position: relative; /* Mantém o header no topo */
+        }
+        header .container {
+            background-color: transparent; /* Removendo o fundo branco */
         }
         header h1 {
             margin: 0;
             font-size: 1.8rem;
         }
-
-
-       
-    .hero-container {
-        position: relative;
-        background-image: url('https://example.com/path/to/your/image.jpg'); /* Substitua pelo caminho da sua imagem */
-        background-size: cover;
-        background-position: center;
-        color: #ffffff;
-        padding: 4rem 2rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        border-radius: 0 0 10px 10px;
-    }
-    .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.4); /* Sobreposição escura */
-        border-radius: 0 0 10px 10px;
-    }
-    .hero-content {
-        position: relative;
-        z-index: 1;
-    }
-
-
-
-
         nav ul {
             list-style: none;
             padding: 0;
@@ -155,14 +155,6 @@
     </style>
 </head>
 <body>
-<div class="hero-container">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1>Descubra o Mundo da Ciência</h1>
-        <p>Explorando e divulgando o conhecimento científico para todos.</p>
-    </div>
-</div>
-
     <header>
         <div class="container">
             <h1>{{ config('app.name', 'Laravel') }}</h1>
@@ -176,9 +168,19 @@
             </nav>
         </div>
     </header>
+
+    <div class="hero-container">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Descubra o Mundo da Ciência</h1>
+            <p>Explorando e divulgando o conhecimento científico para todos.</p>
+        </div>
+    </div>
+
     <div class="container">
         @yield('content')
     </div>
+
     <footer>
         &copy; {{ date('Y') }} {{ config('app.name', 'Laravel') }}. All rights reserved.
     </footer>

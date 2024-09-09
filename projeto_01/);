@@ -1,0 +1,32 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#5851
+    [34mall[39m: [
+      [34;4mApp\Models\Material[39;24m {#4797
+        [34mid[39m: [35m1[39m,
+        [34mtitle[39m: "[32mNovo Material de Climatologia[39m",
+        [34mcontent[39m: "[32mConteúdo do material sobre climatologia.[39m",
+        [34mcategory_id[39m: [35m1[39m,
+        [34muser_id[39m: [35m1[39m,
+        [34mcreated_at[39m: "[32m2024-09-09 22:08:35[39m",
+        [34mupdated_at[39m: "[32m2024-09-09 22:08:35[39m",
+      },
+      [34;4mApp\Models\Material[39;24m {#4810
+        [34mid[39m: [35m2[39m,
+        [34mtitle[39m: "[32mNovo Material de Climatologia[39m",
+        [34mcontent[39m: "[32mConteúdo do material sobre climatologia.[39m",
+        [34mcategory_id[39m: [35m1[39m,
+        [34muser_id[39m: [35m1[39m,
+        [34mcreated_at[39m: "[32m2024-09-09 22:08:55[39m",
+        [34mupdated_at[39m: "[32m2024-09-09 22:08:55[39m",
+      },
+      [34;4mApp\Models\Material[39;24m {#4808
+        [34mid[39m: [35m3[39m,
+        [34mtitle[39m: "[32mNovo Material de Climatologia[39m",
+        [34mcontent[39m: "[32mConteúdo do material sobre climatologia.[39m",
+        [34mcategory_id[39m: [35m1[39m,
+        [34muser_id[39m: [35m1[39m,
+        [34mcreated_at[39m: "[32m2024-09-09 22:12:33[39m",
+        [34mupdated_at[39m: "[32m2024-09-09 22:12:33[39m",
+      },
+    ],
+  }
+
