@@ -169,13 +169,7 @@
         </div>
     </header>
 
-    <div class="hero-container">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Descubra o Mundo da Ciência</h1>
-            <p>Explorando e divulgando o conhecimento científico para todos.</p>
-        </div>
-    </div>
+   
 
     <div class="container">
         @yield('content')

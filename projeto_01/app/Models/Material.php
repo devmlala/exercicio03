@@ -15,6 +15,7 @@ class Material extends Model
     // Atributos que podem ser atribuídos em massa
     protected $fillable = [
         'title', // Título do material
+        'description',
         'content', // Conteúdo do material
         'category_id', // Relacionamento com categorias
         'user_id', // Relacionamento com usuários
